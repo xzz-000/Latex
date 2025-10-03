@@ -1,0 +1,78 @@
+\documentclass[UTF8]{ctexart}
+\usepackage{mathtools}
+\title{tex日常笔记}
+\author{xiaox}
+
+
+\begin{document}
+
+
+\maketitle
+% 生成目录xelatex 笔记.tex xelatex 笔记.tex
+\tableofcontents
+\newpage
+\pagestyle{plain}
+%注意目录要两次才能生成，而且生成目录的命令必须在\pagestyle{plain}命令之前，且生成目录的命令前面最好要有\maketitle，让目录在作者标题等介绍的下面
+
+
+\section{DeclarePairedDelimiter}
+
+\textbackslash mathtools 宏包（amsmath 的扩展，已包含 \textbackslash text{\textbackslash textbackslash DeclarePairedDelimiter}）。
+\textbackslash text{\textbackslash textbackslash DeclarePairedDelimiter}是专门为定界符设计的，比手动用 \textbackslash newcommand 更安全（避免嵌套数学模式问题）。
+
+命令名：自定义的新命令（如 \textbackslash paren）。
+左符号 和 右符号：配对的定界符（如 ( )、[ ]、\textbackslash { \textbackslash }）。
+功能说明
+自动调整符号大小
+通过 \textbackslash  paren* 或 \textbackslash  paren[大小] 选项，符号会根据内容高度自动调整（类似 \textbackslash left( \textbackslash right) 的效果）。
+
+三种调用方式
+
+\textbackslash paren{内容}：默认大小（不自动调整）。
+\textbackslash paren*{内容}：自动调整大小（等价于 \textbackslash left( 内容 \textbackslash right)）。
+\textbackslash paren[大小]{内容}：手动指定大小（如 \textbackslash big、\textbackslash Big、\textbackslash bigg 等）。
+
+\section{三个数学宏包的介绍，区别和关系}
+\begin{enumerate}
+ \item amsmath	独立	多行公式、矩阵、基础排版	所有数学文档（必备）
+  \item amssymb	独立（依赖 amsfonts）	扩展数学符号（如 \textbackslash mathbb）	需要特殊符号的文档
+   \item mathtools	自动加载 amsmath	自动括号、高级排版工具	复杂数学公式（如论文、书籍）
+\end{enumerate}
+
+\section{ctex宏包}
+ $\textbackslash textbackslash usepackage{ctex}$ 是 LaTeX 中用于支持中文排版的核心宏包，尤其适合处理中文、日文、韩文等东亚语言的文档。
+它解决了原生 LaTeX 对中文支持不足的问题，提供了自动字体配置、标点压缩、中文断行等关键功能。
+\textbackslash section{输出反斜杠}
+（方式主要）输出这个：  \textbackslash textbackslash textbackslash
+\section{生成目录}
+注意目录（跟图片的引用一样 ）要两次编译（例如：xelatex 笔记.tex xelatex 笔记.tex）才能生成，而且生成目录的命令必须在\pagestyle{plain}命令之前，
+且生成目录的命令前面最好要有\maketitle，让目录在作者标题等介绍的下面
+\section{行间公式和行内公式}
+\begin{enumerate} 
+ \item 行内公式：$ x = \frac{a}{b} + c $ → 小号分数  \\
+ \item 行间公式：\[ x = \frac{a}{b} + c \] → 大号分数
+ \item \textbackslash tfrac{ }{ }（文本样式分式命令）：
+       它强制分式始终以行内公式的分式大小显示（t 代表 text style）。
+       无论它是在行内公式还是行间公式中使用，它都保持较小字体。
+      使用场景：
+      当在行间公式中需要保持紧凑格式时，避免某个分式显得过大破坏整体紧凑感。
+\item 同理还有\textbackslash dfrac{}{}  这个是默认行间公式
+      但是\textbackslash frac{ }{ }是它会根据当前所处的数学环境自动调整分式的大小。
+在行内公式（用  括起来的公式）中，它会使用较小的字体显示，以保证行间距不至于过大。
+在行间公式（用 括起来的公式，或 `equation` 等环境）中，它会使用较大的字体显示，以提高可读性。
+\end{enumerate}
+\section{题目的分值}
+\subsection{第一方式}
+用\pointpoints{分}{分} % 单数/复数形式均设为中文"分
+然后仅需输入类似这样的程序：\question[17] 会输出 “17分”
+\subsection{第二方式}
+用\renewcommand{\pointformat}{[\arabic{points} 分]} % 格式如 [5分]
+然后仅需输入类似这样的程序：
+\begin{questions}
+\question[17]
+\end{questions} 
+会输出 “17分”
+\sucsection{注意}
+无论是这两种方式中的哪一种，都需要在\textbackslash documentclass \texttt{ [UTF8]} \{exam\}
+这一环境下执行
+\end{document}

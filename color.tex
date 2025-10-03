@@ -1,0 +1,29 @@
+\documentclass[12pt]{ctexart}
+\usepackage{xcolor} % 必须添加的颜色宏包
+\usepackage{float}
+\title{color练习}
+\author{xiaox}
+\date{\today}
+
+\begin{document}
+\maketitle % 生成标题
+
+% 方法1：用 \textcolor 设置局部颜色
+这是\textcolor{red}{红色文字}，这是\textcolor{blue}{蓝色文字}。
+
+% 方法2：用 \color 设置大段颜色（需用花括号限定范围）
+{\color{green}
+这是一段绿色文字。可以包含多行内容，
+换行后仍然是绿色，直到花括号结束。
+}
+
+% 方法3：定义颜色别名
+\definecolor{myorange}{RGB}{255, 165, 0} % 自定义RGB颜色
+这是\textcolor{myorange}{自定义橙色文字}。
+
+% 方法4：颜色盒（带背景色）
+\colorbox{yellow}{黄色背景文字}
+
+
+\begin{}
+\end{document}

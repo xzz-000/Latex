@@ -1,0 +1,35 @@
+\documentclass[UTF8]{ctexart} % 支持中文
+\usepackage{amsmath, amsthm}  % 提供定理环境
+\usepackage{amssymb}          % 数学符号支持
+% 定义对应的文章的小分块
+% 定义定理环境样式
+\newtheorem{definition}{定义}[section] % 定义环境
+\newtheorem{theorem}{引理}[section]    % 引理环境
+
+\begin{document}
+
+\section{驻点与费马引理}
+
+% 驻点定义
+\begin{definition}[驻点]
+设函数 \( f(x) \) 在点 \( x_0 \) 的某邻域内有定义。如果满足
+\[
+f'(x_0) = 0,
+\]
+则称 \( x_0 \) 为函数 \( f(x) \) 的一个\textbf{驻点}（或临界点）。
+\end{definition}
+
+% 费马引理
+\begin{theorem}[费马引理]
+设函数 \( f(x) \) 满足：
+\begin{enumerate}
+    \item 在点 \( x_0 \) 的某去心邻域 \( \mathring{U}(x_0) \) 内可导；
+    \item \( f(x) \) 在 \( x = x_0 \) 处取得极值（极大值或极小值）。
+\end{enumerate}
+则 \( x_0 \) 必为 \( f(x) \) 的驻点，即
+\[
+f'(x_0) = 0.
+\]
+\end{theorem}
+
+\end{document}

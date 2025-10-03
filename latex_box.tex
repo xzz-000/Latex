@@ -1,0 +1,24 @@
+\documentclass{ctexart}
+\renewcommand{\rmdefault}{ptm}
+%\renewcommand{\rmdefault}{ptm} 的作用是将文档的默认罗马
+%字体（Roman font）切换为 Times 字体（PostScript Times Roman）
+\usepackage[papersize={210mm,297mm}, text={62mm,62mm}, margin=2cm]{geometry}
+\begin{document}
+\framebox[3\width]{家用电器}
+\\
+\parindent=2pt
+A\hspace{\stretch{1}}B\hspace{\stretch{2}}C
+%BC之间的间隔宽度占整行宽度的3分之2
+\\
+\\
+\\
+\parindent=0pt
+\makebox[6cm]{\dotfill}\\
+\makebox[6cm]{\hrulefill}\\
+\makebox[6cm]{\downbracefill}\\
+\makebox[6cm]{\upbracefill}\\
+\makebox[6cm]{\leftarrowfill}\\
+\fbox{\shortstack{左边\\家用电器}}
+\rightarrowfill
+\fbox{\shortstack{右边\\文本呢}}
+\end{document}

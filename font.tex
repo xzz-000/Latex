@@ -1,0 +1,61 @@
+% !TEX program = xelatex
+\documentclass[UTF8]{ctexart}
+\setCJKmainfont{SimSun} % 显式指定中文字体（确保系统已安装）
+\setCJKsansfont{SimHei} % 无衬线字体
+\setCJKmonofont{FangSong} % 等宽字体
+
+\begin{document}
+1.0
+默认字号（\texttt{\textbackslash normalsize}）: 这是正文内容。
+
+{\tiny 这是 \texttt{\textbackslash tiny} 字号。} \\
+{\Large 这是 \texttt{\textbackslash Large} 字号。} \\
+{\Huge 这是 \texttt{\textbackslash Huge} 字号。}
+
+\vspace{2\baselineskip}
+2.0
+\title{\Huge 这是一个大标题}
+\author{\Large 作者姓名}
+\date{\small \today}
+\maketitle
+
+\section{章节标题} % 移除显式字号，由 ctexart 自动控制
+正文内容使用 \texttt{\textbackslash normalsize}。
+
+\subsection{子章节标题}
+子章节标题默认与正文同字号，可通过命令调整。
+正文内容。
+{\footnotesize 这是脚注大小的注释文本。}
+
+{\bfseries\Large 这是加粗的大号文本。} % 确保系统字体支持加粗
+
+\vspace{2\baselineskip}
+3.
+\begin{center}
+    \section*{字体尺寸命令演示} % 避免在标题中使用 \section* 嵌套
+\end{center}
+
+% 改用 \centering 避免多余间距
+\begin{center}
+    {\tiny 极小字号 (tiny)} \\
+    {\scriptsize 较小字号 (scriptsize)} \\
+    {\footnotesize 脚注大小 (footnotesize)} \\
+    {\small 稍小字号 (small)} \\
+    {\normalsize 默认字号 (normalsize)} \\
+    {\large 稍大字号 (large)} \\
+    {\Large 更大字号 (Large)} \\
+    {\LARGE 极大字号 (LARGE)} \\
+    {\huge 巨大字号 (huge)} \\
+    {\Huge 最大字号 (Huge)}
+\end{center}
+
+\vspace{1em}
+4.0
+{\bfseries\Large 组合使用：加粗大号文本}
+
+\vspace{1em}
+\noindent 自定义字号： \\
+{\fontsize{15}{18}\selectfont 15pt 字号，18pt 行距} \\
+{\fontsize{25}{30}\selectfont 25pt 字号，30pt 行距}
+
+\end{document}

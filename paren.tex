@@ -1,0 +1,18 @@
+\documentclass{article}
+\usepackage{mathtools} % 必须加载 mathtools 宏包
+
+% 定义 \paren 命令
+\DeclarePairedDelimiter{\paren}{(}{)}
+
+\begin{document}
+
+默认大小（不调整）：
+\[ \paren{a + b} \]
+
+自动调整大小（加 *）：
+\[ \paren*{\frac{1}{2}} \]
+
+手动指定大小（\big）：
+\[ \paren[\big]{\frac{1}{2}} \]
+
+\end{document}

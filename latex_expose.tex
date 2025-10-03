@@ -1,0 +1,32 @@
+\documentclass{ctexart}
+\usepackage[papersize={210mm,297mm}, text={62mm,62mm}, margin=2cm]{geometry}
+\usepackage{pifont}   % 提供 \ding 命令（Zapf Dingbats 字体）
+\usepackage{marvosym} % 提供 \Letter、\EUR 等符号
+\usepackage{textcomp} % 提供 \textbackslash 等文本符号
+\usepackage{fontawesome5} % 提供 Font Awesome 5 图标
+\begin{document}
+
+\section*{常用符号示例}
+
+\subsection*{1. \texttt{marvosym} 宏包的符号}
+\begin{itemize}
+    \item 信封符号：\Letter
+    \item 欧元符号：\EUR
+    \item 电话符号：\Telefon
+    \item 警告符号：\ding{28},
+\end{itemize}
+
+\subsection*{2. \texttt{pifont} 宏包的 \textbackslash ding 命令}
+\begin{itemize}
+    \item 警告符号（十进制 28）：\ding{28}
+    \item 手指符号（十六进制 1C，需转为十进制 28）：\ding{"1C} % 或 \ding{28}
+    \item 星号（十进制 52）：\ding{52}
+\end{itemize}
+
+\subsection*{3. 其他常用符号}
+\begin{itemize}
+    \item 反斜杠：\textbackslash
+    \item 版权符号：\textcopyright
+\end{itemize}
+
+\end{document}

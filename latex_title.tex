@@ -1,0 +1,57 @@
+\documentclass[UTF8]{ctexart} % 使用 ctexart 文档类支持中文
+\usepackage[titletoc]{appendix} % 可选：附录支持
+\setcounter{tocdepth}{3} % 设置目录层次深度显示到 subsubsection（第三级）
+\usepackage{graphicx} % 支持插入图片
+\usepackage{float} % 增强浮动体控制
+
+\begin{document}
+
+% ===== 标题页 =====
+\title{三层级目录结构示例}
+\author{薛中州}
+\date{\today}
+\maketitle
+\thispagestyle{empty} % 标题页无页脚（可选）
+
+% ===== 目录 =====
+
+\pagestyle{plain} % 确保正文页脚显示页码 \pagestyle{plain} 的作用
+%功能：设置页眉（header）和页脚（footer）的样式。
+%plain 样式：仅显示页码（默认在页脚中央），不显示章节标题或其他信息。
+%其他常见样式：
+%empty：不显示页眉和页脚（常用于标题页）。
+%headings：显示当前章节标题和页码（页眉）。
+\tableofcontents%自动生成文档的目录（基于 \section、\subsection 等标题）。
+
+% ===== 正文层次结构 =====
+\clearpage
+\section{第一章 一级标题}
+这是第一章的内容概述。
+
+\subsection{第一节 二级标题}
+这是第一节的内容概述。
+
+\subsubsection{第一小节 三级标题}
+这是第一小节的具体内容。
+
+\subsubsection{第二小节 三级标题}
+这是第二小节的具体内容。
+
+\subsection{第二节 二级标题}
+这是第二节的内容概述。
+
+\clearpage
+\section{第二章 一级标题}
+这是第二章的内容概述。
+
+\subsection{第一节 二级标题}
+这是第一节的内容概述。
+
+\subsubsection{第一小节 三级标题}
+这是第一小节的具体内容。
+
+\clearpage % 确保浮动体输出后分页
+\section{第三章 一级标题}
+第三章部分内容。
+
+\end{document}

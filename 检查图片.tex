@@ -1,0 +1,18 @@
+\documentclass{ctexart}
+\usepackage{graphicx}
+%使用英文字母、数字、下划线 _ 和连字符 -      (其实下划线_和连字符-也最好避免)来命名文件名，
+%避免使用空格、中文、特殊符号（如 #, %, &, \, {, } 等），这些在 LaTeX 中有特殊含义，可能导致编译错误。
+
+\newcommand{\testimage}[1]{%
+    \par\noindent\texttt{#1}: 
+    \IfFileExists{#1}{✓ 存在}{✗ 不存在}
+}
+
+\begin{document}
+
+\textbf{图片文件检查：}
+
+% 测试多个文件
+\testimage{images/earphone.png}
+
+\end{document}
