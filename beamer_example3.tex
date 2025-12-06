@@ -1,0 +1,23 @@
+\documentclass[10pt,aspectratio=169]{beamer}
+\usepackage{ctex} % 支持中文
+
+\usetheme{Madrid} % 使用Madrid主题（可替换为其他主题，如Singapore、Warsaw等）
+
+% 标题信息
+\title{Beamer演示文稿示例}
+\subtitle{一个简单的LaTeX幻灯片}
+\author{你的名字}
+\institute{某某大学}
+\date{\today}
+
+
+\begin{document}
+  % 错误用法：标题页内容会直接插入当前位置（可能破坏布局）
+\begin{frame}
+\titlepage
+\end{frame}
+\begin{frame}{第一页}
+      \texttt{正文内容...}
+     
+\end{frame}
+\end{document}

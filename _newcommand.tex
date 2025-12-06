@@ -1,0 +1,28 @@
+\documentclass[UTF8]{ctexart}
+\newcommand{\keyword}[1]{\textbf{#1}} % #1 表示第一个参数
+\newcommand{\myemail}{contact@example.com}
+\newcommand{\highlight}[2][red]{\textcolor{#1}{#2}}
+\newcommand{\sectionWithQuote}[2]{
+  \section{#1}
+  \begin{quote}
+    #2
+  \end{quote}
+}
+\begin{document}
+\section{newcommand的用法}
+
+\subsection{一个参数}
+\keyword{标题}
+
+
+\subsection{默认参数}
+\myemail
+
+\subsection{两个或者多个参数}
+\highlight{重要}
+\highlight[blue]{注意}
+
+
+\subsection{嵌套函数}
+\sectionWithQuote{引言}{这是引言的内容 。。。}
+\end{document}

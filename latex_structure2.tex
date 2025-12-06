@@ -1,0 +1,31 @@
+\documentclass{ctexart}
+\usepackage[papersize={210mm,297mm}, text={62mm,62mm}, margin=2cm]{geometry}
+\usepackage{fancybox} % 提供阴影和框线功能
+\usepackage{tcolorbox}
+\tcbuselibrary{skins} % 加载阴影相关库
+\begin{document}
+
+% 正确用法：\shadowbox 带阴影的盒子
+\shadowbox{%
+    \parbox{\linewidth}{%\parbox 是一个非常重要的命令，用于在文本行内创建一个段落盒子
+        \CTEXindent % 中文段落首行缩进
+        请在整个关机过程结束后再关闭显示器和打印机！%
+    }%
+}
+
+\vspace{1cm} % 增加垂直间距
+
+
+
+\tcbset{enhanced, colback=white, drop shadow={black!30!white}}
+\begin{tcolorbox}
+    请在整个关机过程结束后再关闭显示器和打印机！
+\end{tcolorbox}
+
+% 正确用法：\framebox 或 \fbox
+\framebox[\width]{家用电器} % \width 是 LaTeX 内部长度，需结合 \settowidth 使用
+
+% 更推荐的方式：明确指定宽度
+\framebox[3cm][c]{家用电器} % 3cm 宽度，居中对齐
+
+\end{document}

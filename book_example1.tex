@@ -1,0 +1,113 @@
+\documentclass[12pt, a4paper, openany]{ctexbook} % 使用book文档类，12pt字体，A4纸，章节从任意页开始（openany）
+\usepackage{geometry} % 页面边距设置
+\usepackage{graphicx} % 插入图片
+\usepackage{amsmath, amssymb} % 数学公式和符号
+\usepackage{fancyhdr} % 页眉页脚
+\usepackage{hyperref} % 超链接和书签
+\usepackage{caption} % 图表标题
+\usepackage{subcaption} % 子图支持
+\usepackage{biblatex} % 参考文献（新版推荐）
+\addbibresource{refs.bib} % 参考文献数据库（需自行创建refs.bib文件）
+\usepackage{float}
+% 页面边距设置
+\geometry{left=2.5cm, right=2.5cm, top=3cm, bottom=3cm}
+
+% 页眉页脚样式
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage} % 偶数页左页眉，奇数页右页眉显示页码
+\fancyhead[RE]{\leftmark}   % 奇数页左页眉显示章节名
+\fancyhead[LO]{\rightmark}  % 偶数页右页眉显示小节名
+
+% 超链接样式（取消红色边框）
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=green,
+    urlcolor=magenta
+}
+
+% 自定义命令示例
+\newcommand{\keyterm}[1]{\textbf{#1}} % 加粗关键词
+
+% 书籍信息
+\title{LaTeX 书籍编写示例}
+\author{xiaox}
+\date{\today}
+
+\begin{document}
+
+% 前言部分（罗马数字页码）
+\frontmatter
+\maketitle % 生成标题页
+\chapter{序言} % 前言章节
+这本书展示了如何使用 LaTeX 编写结构化的文档...
+
+\tableofcontents % 生成目录
+
+
+% 正文部分（阿拉伯数字页码）
+\mainmatter
+\chapter{引言}
+\section{研究背景}
+LaTeX 是排版学术文献的强大工具\cite{lamport1994latex}。例如，数学公式：
+\begin{equation}
+    E = mc^2 \label{eq:energy}
+\end{equation}
+公式 \ref{eq:energy} 是著名的质能方程。
+
+\section{插入图片}
+如图 \ref{fig:example} 所示：
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/example-image-logo.png} % 示例图片（需替换为实际图片）
+    \caption{示例图片}
+    \label{fig:example}
+\end{figure}
+
+\chapter{方法}
+\section{实验设计}
+数据如表 \ref{tab:data} 所示：
+\begin{table}[htbp]
+    \centering
+    \caption{实验数据}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        样本 & 参数A & 参数B \\ \hline
+        1    & 10    & 0.5   \\ \hline
+        2    & 15    & 0.8   \\ \hline
+    \end{tabular}
+    \label{tab:data}
+\end{table}
+
+\section{子图示例}
+如图 \ref{fig:subfigs} 所示：
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.4\textwidth}
+        \includegraphics[width=\textwidth]{images/example-image-logo.png}
+        \caption{子图1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.4\textwidth}
+        \includegraphics[width=\textwidth]{images/example-image-logo.png}
+        \caption{子图2}
+    \end{subfigure}
+    \caption{多子图示例}
+    \label{fig:subfigs}
+\end{figure}
+
+% 附录部分
+\appendix
+\chapter{附录内容}
+这里是附录，可以放置补充材料或代码。
+
+% 参考文献（需配合biblatex或bibtex）
+\printbibliography[title=参考文献]
+
+% 后记（可选）
+\backmatter
+\chapter{后记}
+感谢所有帮助过我的人！
+
+\end{document}

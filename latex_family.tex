@@ -1,0 +1,59 @@
+% !TEX program = pdflatex
+% 预加载常用宏包（避免编译时提示未定义符号）
+\documentclass{ctexart}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}       % 用于插入符号（如 \TeX 标志）
+\usepackage{holtxdoc}       % 提供 \hologo 命令（专业标志支持）
+\usepackage{fontawesome5}   % 提供额外符号（如 \faFontAwesome）
+\usepackage{metalogo}       % 优化 LaTeX 相关标志显示
+\usepackage{amsmath}
+% 自定义命令：生成 TeX 家族标志
+\newcommand{\texfamilylogos}{%
+  \begin{center}
+    \scalebox{2}{%
+      \begin{tabular}{ll}
+        \hline
+        \textbf{标志} & \textbf{命令} \\
+        \hline
+        \TeX          & \texttt{\textbackslash TeX}       \\
+        \LaTeX        & \texttt{\textbackslash LaTeX}     \\
+        \LaTeXe       & \texttt{\textbackslash LaTeXe}    \\
+        \XeTeX        & \texttt{\textbackslash XeTeX}     \\
+        \LuaTeX       & \texttt{\textbackslash LuaTeX}    \\
+        \BibTeX       & \texttt{\textbackslash BibTeX}    \\
+        \AmS-\TeX     & \texttt{\textbackslash AmS-\TeX}  \\
+        \textsl{ConTeXt} & \texttt{\textbackslash textsl\{ConTeXt\}} \\ % 需要 holtxdoc 宏包
+        \hline
+      \end{tabular}
+    }
+  \end{center}
+}
+
+\begin{document}
+
+\title{TeX 家族标识符号示例}
+\author{预加载宏包：\texttt{graphicx, holtxdoc, fontawesome5, metalogo}}
+\date{\today}
+\maketitle
+\pagestyle{plain}
+%plain是默认的样式 还有  headings empty   myheadings(这个需搭配相应的宏包)
+\section{TeX 家族标志}
+以下是常见 TeX 相关标志的生成示例：
+
+\texfamilylogos % 生成一个 居中、放大 2 倍的表格，展示 TeX 家族常见标志及其对应的 LaTeX 命令。
+
+\section{扩展符号示例}
+使用 \texttt{fontawesome5} 宏包生成额外符号：
+\begin{itemize}
+  \item \faIcon{font-awesome} Font Awesome 图标（命令：\verb|\faIcon{font-awesome}|）
+  %\item \faIcon{tex} TeX 图标（命令：\verb|\faIcon{tex}|）
+\end{itemize}
+
+\section{注意事项}
+\begin{enumerate}
+  \item 编译此文档需要安装完整的 TeX Live/MiKTeX 发行版。                                         .
+  \item 若标志显示异常，请检查是否预加载了必要的宏包（如 \texttt{holtxdoc}）。
+  \item 使用 \texttt{metalogo} 宏包可优化 \verb|\LaTeX| 等标志的间距。
+\end{enumerate}
+
+\end{document}

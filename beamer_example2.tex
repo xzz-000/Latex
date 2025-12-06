@@ -1,0 +1,55 @@
+\documentclass[10pt]{beamer} % 使用beamer文档类
+\usepackage{ctex} % 支持中文
+
+\usetheme{Madrid} % 使用Madrid主题（可替换为其他主题，如Singapore、Warsaw等）
+
+% 标题信息
+\title{Beamer演示文稿示例}
+\subtitle{一个简单的LaTeX幻灯片}
+\author{你的名字}
+\institute{某某大学}
+\date{\today}
+
+\begin{document}
+
+% 1. 标题页
+\begin{frame}
+    \titlepage % 生成标题页
+\end{frame}
+
+% 2. 目录页
+\begin{frame}{目录}
+    \tableofcontents % 生成目录（需在section前使用）
+\end{frame}
+
+% 3. 正文部分
+\section{第一节：介绍}
+\begin{frame}{什么是Beamer？}
+    \begin{itemize}
+        \item Beamer 是 LaTeX 的一个文档类，用于制作幻灯片。
+        \item 支持数学公式、表格、图片等 LaTeX 功能。
+        \item 可通过主题（theme）自定义样式。
+    \end{itemize}
+\end{frame}
+
+\section{第二节：示例}
+\begin{frame}{公式与列表}
+    \begin{block}{著名公式}
+        \[ E = mc^2 \]
+    \end{block}
+    \begin{exampleblock}{示例列表}
+        \begin{enumerate}
+            \item 第一项
+            \item 第二项
+            \item 第三项
+        \end{enumerate}
+    \end{exampleblock}
+\end{frame}
+
+% 4. 结束页
+\begin{frame}{感谢聆听！}
+    \centering
+    \Large 欢迎提问！
+\end{frame}
+
+\end{document}

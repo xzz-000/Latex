@@ -1,0 +1,24 @@
+\documentclass[UTF8]{ctexart}
+\usepackage{amsmath} % 用于数学公式
+
+\begin{document}
+\pagestyle{plain}%为了使章节的页脚明确正确
+\section{引言}
+\label{sec:intro} % 标记章节
+本节介绍交叉引用的用法（见第 \pageref{sec:intro} 页）。
+
+\subsection{数学公式}%行间公式
+欧拉公式是数学中最美的公式之一：
+\begin{equation}
+e^{i\pi} + 1 = 0
+\label{eq:euler} % 标记公式
+\end{equation}
+详见公式 \eqref{eq:euler}（第 \pageref{eq:euler} 页）。
+\clearpage
+\section{结论}
+如第 \ref{sec:intro} 节所述，交叉引用可自动更新编号和页码。
+\newsavebox{\Mysquare}
+\sbox{\Mysquare}{\fboxrule=1pt\framebox{\rule{7mm}{0pt}\rule{0pt}{7mm}}}
+\usebox{\Mysquare}
+\usebox{\Mysquare}
+\end{document}

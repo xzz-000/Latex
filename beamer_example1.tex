@@ -1,0 +1,151 @@
+\documentclass[10pt, aspectratio=169]{beamer} % 使用16:9比例
+
+% 主题设置（采用专业风格）
+\usetheme{Madrid} % 可选主题：Madrid, Berlin, Singapore, Warsaw等
+\usecolortheme{beaver} % 颜色主题（红色系）
+\setbeamertemplate{navigation symbols}{} % 去掉导航按钮
+\setbeamertemplate{footline}[frame number] % 显示页码
+
+% 中文支持（需XeLaTeX编译）
+\usepackage{xeCJK}
+\setCJKmainfont{Microsoft YaHei} % 设置中文字体
+\setCJKsansfont{Microsoft YaHei}
+% 在导言区添加
+\setCJKmonofont{SimSun} % 或者其他你系统有的中文等宽字体
+
+% 其他常用包
+\usepackage{graphicx}
+\usepackage{booktabs} % 专业表格
+\usepackage{tikz} % 绘图
+\usepackage{hyperref} % 超链接
+\usepackage{pgfplots}
+% 标题信息
+\title[企业演示]{2023年度企业战略规划}
+\subtitle{创新驱动 · 持续增长}
+\author[张三]{张三 \\ 战略发展部总监}
+\institute[ABC公司]{ABC科技有限公司}
+\date{\today}
+\logo{\includegraphics[height=0.8cm]{images/example-image-logo.png}} % 替换为公司logo
+
+\begin{document}
+
+% 封面页
+\frame{\titlepage}
+
+% 目录页
+\begin{frame}{目录}
+    \tableofcontents[hideallsubsections]
+\end{frame}
+
+% 第一部分：公司概述
+\section{公司概述}
+\begin{frame}{公司简介}
+    \begin{columns}[T]
+        \begin{column}{0.5\textwidth}
+            \begin{block}{基本信息}
+                \begin{itemize}
+                    \item 成立时间：2010年
+                    \item 员工人数：500+
+                    \item 年营业额：¥2.3亿
+                    \item 核心业务：AI解决方案
+                \end{itemize}
+            \end{block}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.8\textwidth]{images/example-image-team.jpg} % 替换为团队图片
+                \caption{核心团队}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{市场地位}
+    \begin{table}
+        \caption{2022年市场份额}
+        \centering
+        \begin{tabular}{lcc}
+            \toprule
+            区域 & 市场份额 & 增长率 \\
+            \midrule
+            华东 & 32\% & +15\% \\
+            华北 & 28\% & +12\% \\
+            华南 & 19\% & +8\% \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+    
+    \vspace{1em}
+    \begin{alertblock}{行业排名}
+        连续三年位列AI解决方案提供商前三
+    \end{alertblock}
+\end{frame}
+
+% 第二部分：战略规划
+\section{战略规划}
+\begin{frame}{2023年战略目标}
+    \begin{enumerate}
+        \item 营收增长30\%至¥3亿
+        \item 研发投入占比提升至25\%
+        \item 新增3个区域办事处
+        \item 获得5项核心专利
+    \end{enumerate}
+    
+    \begin{center}%百分之20的透明度
+        \tikz\draw[yellow,fill=red!0](5,0) circle (1cm) node(其他领域)
+        \tikz\draw[red,fill=red!20] (0,0) circle (1cm) node {重点领域};
+    \end{center}
+\end{frame}
+
+\begin{frame}{实施路径}
+    \begin{tikzpicture}[scale=0.8]
+        \node (start) at (0,0) [rectangle,draw,fill=blue!20] {战略制定};
+        \node (plan) at (3,0) [rectangle,draw,fill=blue!20] {计划分解};
+        \node (exec) at (6,0) [rectangle,draw,fill=blue!20] {执行监控};
+        \node (review) at (9,0) [rectangle,draw,fill=blue!20] {评估改进};
+        
+        \draw[->,thick] (start) -- (plan);
+        \draw[->,thick] (plan) -- (exec);
+        \draw[->,thick] (exec) -- (review);
+        \draw[->,thick,loop right] (review) to (start);
+    \end{tikzpicture}
+\end{frame}
+
+% 第三部分：财务预测
+\section{财务预测}
+\begin{frame}{营收预测（单位：百万元）}
+    \begin{tikzpicture}
+        \begin{axis}[
+            ybar,
+            enlargelimits=0.15,
+            legend style={at={(0.5,-0.15)},
+            anchor=north,legend columns=-1},
+            ylabel={营收},
+            symbolic x coords={2021,2022,2023,2024},
+            xtick=data,
+            nodes near coords,
+            nodes near coords align={vertical},
+        ]
+        \addplot coordinates {(2021,180) (2022,230) (2023,300) (2024,390)};
+        \addplot coordinates {(2021,45) (2022,65) (2023,90) (2024,120)};
+        \legend{主营业务,新业务}
+        \end{axis}
+    \end{tikzpicture}
+\end{frame}
+
+% 结束页
+\begin{frame}[plain]
+    \centering
+    \Huge 感谢聆听！\\
+    \vspace{2em}
+    \Large 联系方式：\\
+    \texttt{contact@abc-tech.com}\\
+    \texttt{www.abc-tech.com}
+    
+    \vspace{1em}
+    \includegraphics[height=1cm]{images/example-image-logo.png} % 公司logo
+\end{frame}
+
+
+\end{document}
