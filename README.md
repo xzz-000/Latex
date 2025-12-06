@@ -1,6 +1,4 @@
 # Latex
 
-programdaily
-
-1.0
+latex_daily_git
 
